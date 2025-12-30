@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+  * @typedef {import('eslint').Linter.RulesRecord} RulesRecord
+ */
+
 const fs = require('fs');
 const path = require('path');
 
@@ -36,8 +40,12 @@ const getRelativeFilePaths = (dir, baseDir = dir) => {
 };
 
 const baseDir = path.resolve(__dirname, './');
+
 /**
- * @typedef {import('eslint').Linter.RulesRecord} RulesRecord
  * @return {Partial<RulesRecord>[]}
  */
-module.exports = () => getRelativeFilePaths(baseDir, __dirname).map(require);
+const init = () => {
+  return getRelativeFilePaths(baseDir, __dirname).map(require);
+}
+
+module.exports = init

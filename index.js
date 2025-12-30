@@ -16,7 +16,7 @@ const config = {
     prettier: pluginPrettier,
   },
   ignores: ['node_modules/'],
-  rules: {},
+  rules: {}
 };
 
 Object.assign(config.rules, recommended.rules);
